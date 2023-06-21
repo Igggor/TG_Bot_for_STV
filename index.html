@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>tg:site</title>
+    
+</head>
+<body>
+    <main>
+        <article class="cont">
+            <p class="info">ФИО клиента</p>
+            <input type="text" id="user" class="inp">
+        </article>
+
+        <article class="cont">
+            <p class="info">ФИО выездного</p>
+            <input type="text" id="worker" class="inp">
+        </article>
+
+        <article class="cont">
+            <p class="info">ФИО монтажника</p>
+            <input type="text" id="mounter" class="inp">
+        </article>
+
+        <article class="cont">
+            <p class="info">Дата выезда</p> <!--Сделать дату-->
+            <!-- <input type="date" id="drive_date" class="inp day"> -->
+            <div class="time_cont">
+                <input type="number" value="1" class="day" id="Drive_day" min="1" max="31">
+                <select name="month" class="month" id="Drive_month">
+                    <option value="">Января</option>
+                    <option value="">Февраля</option>
+                    <option value="">Марта</option>
+                    <option value="">Апреля</option>
+                    <option value="">Мая</option>
+                    <option value="">Июня</option>
+                    <option value="">Июля</option>
+                    <option value="">Августа</option>
+                    <option value="">Сентября</option>
+                    <option value="">Октября</option>
+                    <option value="">Ноября</option>
+                    <option value="">Декабря</option>
+                </select>
+                <input type="number" value="2023" id="Drive_year" class="year" min="2000" max="2054">
+            </div>
+        </article>
+
+        <article class="cont">
+            <p class="info">Дата подписания КС</p>  <!--Сделать дату-->
+            <!-- <input type="date" id="KS_date" class="inp day"> -->
+            <div class="time_cont">
+                <input type="number" value="1" class="day" id="KS_day" min="1" max="31">
+                <select name="month" class="month" id="KS_month">
+                    <option value="">Января</option>
+                    <option value="">Февраля</option>
+                    <option value="">Марта</option>
+                    <option value="">Апреля</option>
+                    <option value="">Мая</option>
+                    <option value="">Июня</option>
+                    <option value="">Июля</option>
+                    <option value="">Августа</option>
+                    <option value="">Сентября</option>
+                    <option value="">Октября</option>
+                    <option value="">Ноября</option>
+                    <option value="">Декабря</option>
+                </select>
+                <input type="number" value="2023" id="KS_year" class="year" min="2000" max="2054">
+            </div>
+        </article>
+
+        <article class="cont">
+            <p class="info">Модель дома</p> <!--Выпадающий список-->
+            <!-- <input type="text" class="inp"> -->
+            <select name="Модель дома" id="Home_model">
+                <option value="">-Выберете модель дома-</option> <!--value для кратких кодов (типо не pineaple, а pi_Ap)-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+                <option value="">модель N</option> <!-- Заполнение будет через JS-->
+            </select>
+        </article>
+
+        <article class="cont">
+            <p class="info">Тип монтажа</p>  <!--Выпадающий список-->
+            <!-- <input type="text" class="inp"> -->
+            <select name="Тип монтажа" id="mont_type">
+                <option value="">-Выберете тип монтажа-</option> <!--value для кратких кодов (типо не pineaple, а pi_Ap)-->
+                <option value="">Скрытый</option> <!-- Заполнение будет через JS-->
+                <option value="">Открытый</option> <!-- Заполнение будет через JS-->
+                <option value="">Наружка</option> <!-- Заполнение будет через JS-->
+            </select>
+        </article>
+
+        <article class="cont">
+            <p class="info">Адрес объекта</p>
+            <input type="text" id="adress" class="inp">
+        </article>
+
+        <article class="cont">
+            <p class="info">Тип обращения</p> <!--Выпадающий список-->
+            <!-- <input type="text" class="inp"> -->
+            <select name="Тип обращения" class="type" id="obr_type">
+                <option value="">-Выберете тип обращения-</option> <!--value для кратких кодов (типо не pineaple, а pi_Ap)-->
+                <option value="">ККР</option> <!-- Заполнение будет через JS-->
+                <option value="">Диспетчер</option>
+                <option value="">Сервисная служба</option> <!-- Заполнение будет через JS-->
+            </select>
+        </article>
+
+        <article class="cont">
+            <p class="info">Комментарий</p>
+            <textarea name="comm" id="comm" cols="30" rows="10"></textarea>
+        </article>
+
+
+
+        
+        <!-- <button>Отправить форму в сообщении</button> -->
+        <p class="invis" id="KSp"></p>
+        <p class="invis" id="Drivep"></p>
+    </main>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="node.js"></script>
+    
+</body>
+</html>
