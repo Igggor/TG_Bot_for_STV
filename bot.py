@@ -50,7 +50,6 @@ def new_mes(message):
             else: group.append(types.InputMediaVideo(el.video.file_id))
             del mess[0]
          bot.send_media_group(CHAT_ID, group)
-         print(f"[log]: Отправлено, осталось {len(mess)}")
       bot.send_message(message.chat.id, "Фото и Видео отправлены, форма заполнена", parse_mode="Markdown", reply_markup=webAppKeyboard())
 
    else: start_fun(message)
@@ -59,11 +58,9 @@ def new_mes(message):
 
 @bot.message_handler(content_types="web_app_data") #получаем отправленные данные 
 def answer(webAppMes):
-   # print(webAppMes) #вся информация о сообщении
    t = webAppMes.web_app_data.data
    t = t.split("\n")
-   print(t) #конкретно то что мы передали в бота
-   bot.send_message(webAppMes.chat.id, f"инофрмация из формы получена") 
+   bot.send_message(webAppMes.chat.id, f"информация из формы получена")
    if(t[0] != "" and t[1] != '' and t[2] != '' and t[5] != "-Выберете модель дома-" and t[6] != "-Выберете тип монтажа-" and t[7] != "" and t[8] != '-Выберете тип обращения-'):
       st = f"ФИО клиента: {t[0]};\nФИО выездного: {t[1]};\nФИО монтажника: {t[2]};\nДата выезда: {t[3]};\nДата подписания КС: {t[4]};\nМодель дома: {t[5]};\nТип монтажа: {t[6]};\nАдрес объекта: {t[7]};\nТип обращения: {t[8]};\nКомментарий: {t[9]}."
       bot.send_message(webAppMes.chat.id, st)
